@@ -130,7 +130,7 @@ cmp.setup {
   window = {
     completion = {
       border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
-      winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
     },
   },
 }
