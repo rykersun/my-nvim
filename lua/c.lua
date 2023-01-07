@@ -223,3 +223,4 @@ require("telescope").setup({
     },
   },
 })
+require("presence"):setup({})
