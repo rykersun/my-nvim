@@ -213,6 +213,8 @@ require("indent_blankline").setup {
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>s', builtin.lsp_document_symbols, {})
 vim.api.nvim_set_keymap('n', '<leader>d', ':lua require"telescope.builtin".diagnostics({ bufnr = 0 })<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>f', ':lua require"telescope.builtin".find_files({ hidden = false })<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>F', ':lua require"telescope.builtin".find_files({ hidden = true })<CR>', {noremap = true, silent = true})
 local actions = require("telescope.actions")
 require("telescope").setup({
   defaults = {
