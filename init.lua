@@ -5,6 +5,6 @@ require("c") -- config
 
 -- Colorscheme settings
 vim.opt.cursorline = true
--- require("colorscheme.vscode")
+require("colorscheme.vscode")
 -- require("colorscheme.github")
-require("colorscheme.tokyonight")
+-- require("colorscheme.tokyonight")
