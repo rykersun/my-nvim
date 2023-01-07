@@ -1,8 +1,10 @@
-vim.opt.ts = 8
+local tab_size = 8
+
+vim.opt.ts = tab_size
 vim.opt.et = true
-vim.opt.sw = 8
+vim.opt.sw = tab_size
 vim.opt.sr = true
-vim.opt.sts = 8
+vim.opt.sts = tab_size
 vim.opt.nu = true
 vim.opt.acd = true
 vim.opt.tgc = true
