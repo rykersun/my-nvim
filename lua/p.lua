@@ -25,6 +25,10 @@ return require('packer').startup(function(use)
 
   use 'numToStr/FTerm.nvim'
 
+  use 'lukas-reineke/indent-blankline.nvim'
+
+  use 'norcalli/nvim-colorizer.lua'
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
