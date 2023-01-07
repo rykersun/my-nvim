@@ -200,8 +200,7 @@ require("indent_blankline").setup {
 }
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>s', builtin.lsp_document_symbols, {})
-vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.api.nvim_set_keymap('n', '<leader>d', ':lua require"telescope.builtin".diagnostics({ bufnr = 0 })<CR>', {noremap = true, silent = true})
 local actions = require("telescope.actions")
 require("telescope").setup({
   defaults = {
@@ -209,6 +208,18 @@ require("telescope").setup({
       i = {
         ["<esc>"] = actions.close,
       },
+    },
+  },
+  pickers = {
+    diagnostics = {
+      -- theme = "dropdown",
+      -- theme = "cursor",
+      theme = "ivy",
+    },
+    lsp_document_symbols = {
+      theme = "dropdown",
+      -- theme = "cursor",
+      -- theme = "ivy",
     },
   },
 })
