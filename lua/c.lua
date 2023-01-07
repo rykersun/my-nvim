@@ -20,6 +20,7 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'sumneko_lua',
   'clangd',
+  'marksman',
 })
 lsp.set_preferences({
   set_lsp_keymaps = false,
@@ -136,7 +137,7 @@ cmp.setup {
 }
 lsp.setup()
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "lua", "vim", "c" },
+  ensure_installed = { "lua", "vim", "c", "markdown" },
   sync_install = false,
   auto_install = true,
   highlight = {
