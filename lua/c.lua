@@ -212,6 +212,7 @@ require("indent_blankline").setup {
 }
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>s', builtin.lsp_document_symbols, {})
+vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 vim.api.nvim_set_keymap('n', '<leader>d', ':lua require"telescope.builtin".diagnostics({ bufnr = 0 })<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>f', ':lua require"telescope.builtin".find_files({ hidden = false })<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>F', ':lua require"telescope.builtin".find_files({ hidden = true })<CR>', {noremap = true, silent = true})
@@ -235,6 +236,19 @@ require("telescope").setup({
       -- theme = "cursor",
       -- theme = "ivy",
     },
+    buffers = {
+      show_all_buffers = true,
+      sort_lastused = true,
+      -- theme = "dropdown",
+      theme = "cursor",
+      -- theme = "ivy",
+      previewer = false,
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer",
+        }
+      }
+    }
   },
 })
 require("presence"):setup({})
