@@ -129,3 +129,4 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 vim.keymap.set('n', '<Space>l', ':LazyGitCurrentFile<CR>')
+require('gitsigns').setup()
