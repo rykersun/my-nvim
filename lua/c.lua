@@ -198,3 +198,16 @@ require("indent_blankline").setup {
   show_current_context = true,
   show_current_context_start = true,
 }
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>s', builtin.lsp_document_symbols, {})
+vim.keymap.set('n', '<leader>d', builtin.diagnostics, {})
+local actions = require("telescope.actions")
+require("telescope").setup({
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+      },
+    },
+  },
+})
