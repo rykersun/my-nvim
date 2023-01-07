@@ -6,5 +6,6 @@ vim.opt.sw = tab_size
 vim.opt.sr = true
 vim.opt.sts = tab_size
 vim.opt.nu = true
+vim.opt.rnu = true
 vim.opt.acd = true
 vim.opt.tgc = true
