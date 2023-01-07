@@ -15,7 +15,13 @@ lsp.ensure_installed({
   'clangd',
 })
 lsp.set_preferences({
-  set_lsp_keymaps = false
+  set_lsp_keymaps = false,
+  sign_icons = {
+    error = '✘',
+    warn = '▲',
+    hint = '⚑',
+    info = ''
+  },
 })
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
