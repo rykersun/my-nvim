@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 require('Comment').setup({
   toggler = {
     line = '<C-/>',
@@ -164,3 +165,12 @@ require('gitsigns').setup{
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
 }
+require'FTerm'.setup({
+  border = 'rounded',
+  dimensions  = {
+    height = 0.9,
+    width = 0.9,
+  },
+})
+vim.keymap.set('n', '<C-`>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-`>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')

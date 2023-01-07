@@ -6,5 +6,3 @@ vim.opt.sts = 8
 vim.opt.nu = true
 vim.opt.acd = true
 vim.opt.tgc = true
-vim.opt.cursorline = true
-vim.g.mapleader = " "

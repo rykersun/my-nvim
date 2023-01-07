@@ -23,6 +23,8 @@ return require('packer').startup(function(use)
 
   use 'lewis6991/gitsigns.nvim'
 
+  use 'numToStr/FTerm.nvim'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = function()
