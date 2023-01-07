@@ -1,6 +1,2 @@
-vim.o.background = 'dark'
--- vim.o.background = 'light'
-local c = require('vscode.colors')
-require('vscode').setup({
-    transparent = false,
-})
+require("colorscheme.vscode.theme")
+require("colorscheme.vscode.lualine")

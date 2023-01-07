@@ -1,4 +1,2 @@
-require("github-theme").setup({
-  theme_style = "dark",
-  -- theme_style = "light",
-})
+require("colorscheme.github.theme")
+require("colorscheme.github.lualine")
