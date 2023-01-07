@@ -21,6 +21,9 @@ lsp.ensure_installed({
   'sumneko_lua',
   'clangd',
   'marksman',
+  'html',
+  'cssls',
+  'tsserver',
 })
 lsp.set_preferences({
   set_lsp_keymaps = false,
@@ -137,7 +140,15 @@ cmp.setup {
 }
 lsp.setup()
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "lua", "vim", "c", "markdown" },
+  ensure_installed = {
+    "lua",
+    "vim",
+    "c",
+    "markdown",
+    "rust",
+    "html",
+    "css",
+  },
   sync_install = false,
   auto_install = true,
   highlight = {
