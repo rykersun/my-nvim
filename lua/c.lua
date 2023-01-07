@@ -1,4 +1,10 @@
 vim.g.mapleader = " "
+require('mason.settings').set({
+  ui = {
+    border = 'rounded'
+  }
+})
+vim.keymap.set('n', '<leader>m', ':Mason<CR>')
 require('Comment').setup({
   toggler = {
     line = '<C-/>',
@@ -109,7 +115,8 @@ lsp.setup_nvim_cmp({
         path = '[PATH]',
         luasnip = '[SNIP]',
       },
-      mode = 'text',
+      preset = 'codicons',
+      mode = 'symbol_text',
       maxwidth = 30,
       ellipsis_char = '...',
       before = function (entry, vim_item)
@@ -119,6 +126,14 @@ lsp.setup_nvim_cmp({
   },
   documentation = false,
 })
+cmp.setup {
+  window = {
+    completion = {
+      border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
+      winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+    },
+  },
+}
 lsp.setup()
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "lua", "vim", "c" },
