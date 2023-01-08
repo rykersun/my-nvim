@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
 
   use 'andweeb/presence.nvim'
 
+  use 'stevearc/dressing.nvim'
+
   use {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim', tag = '0.1.0'}
 
   use {
