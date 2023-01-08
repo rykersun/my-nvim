@@ -226,6 +226,11 @@ require("telescope").setup({
       -- theme = "cursor",
       theme = "ivy",
     },
+    live_grep = {
+      theme = "dropdown",
+      -- theme = "cursor",
+      -- theme = "ivy",
+    },
     lsp_document_symbols = {
       theme = "dropdown",
       -- theme = "cursor",
