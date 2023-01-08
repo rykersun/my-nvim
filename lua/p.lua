@@ -13,10 +13,13 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'numToStr/Comment.nvim'
+
   use 'windwp/nvim-autopairs'
 
   use 'folke/tokyonight.nvim'
+
   use 'projekt0n/github-nvim-theme'
+
   use 'Mofiqul/vscode.nvim'
 
   use 'kdheepak/lazygit.nvim'

@@ -1,4 +1,4 @@
-local tab_size = 8
+local tab_size = 4
 
 vim.opt.ts = tab_size
 vim.opt.et = true
