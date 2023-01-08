@@ -2,9 +2,8 @@
 
 * nodejs
 * npm
-
-[ripgrep](https://github.com/BurntSushi/ripgrep/releases) 
-[codicon](https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf)
+* [ripgrep](https://github.com/BurntSushi/ripgrep/releases) 
+* [codicon](https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf)
 
 # Install
 
