@@ -7,10 +7,10 @@ require('mason.settings').set({
 vim.keymap.set('n', '<leader>m', ':Mason<CR>')
 require('Comment').setup({
   toggler = {
-    line = '<C-c>',
+    line = '<C-/>',
   },
   opleader = {
-    line = '<C-c>',
+    line = '<C-/>',
   },
 })
 require('nvim-autopairs').setup({})
@@ -193,8 +193,8 @@ require'FTerm'.setup({
     width = 0.9,
   },
 })
-vim.keymap.set('n', '<F1>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<F1>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('n', '<C-`>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-`>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 require 'colorizer'.setup()
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
