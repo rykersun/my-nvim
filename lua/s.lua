@@ -9,3 +9,5 @@ vim.opt.nu = true
 vim.opt.rnu = true
 vim.opt.acd = true
 vim.opt.tgc = true
+vim.opt.hlsearch = true
+vim.opt.incsearch = true

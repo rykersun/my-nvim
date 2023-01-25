@@ -12,6 +12,8 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  use 'github/copilot.vim'
+
   use 'numToStr/Comment.nvim'
 
   use 'windwp/nvim-autopairs'
@@ -79,6 +81,13 @@ return require('packer').startup(function(use)
       {'onsails/lspkind.nvim'},
     }
   }
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+  }
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   if packer_bootstrap then
     require('packer').sync()
   end

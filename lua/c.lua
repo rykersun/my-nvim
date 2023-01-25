@@ -42,7 +42,7 @@ lsp.on_attach(function(client, bufnr)
   bind('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
   bind('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>')
   bind('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
-  bind('n', 'mv', '<cmd>lua vim.lsp.buf.rename()<cr>')
+  bind('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>')
   bind('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>')
   bind('x', '<F4>', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
   -- Diagnostics
@@ -207,7 +207,7 @@ require("indent_blankline").setup {
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>s', builtin.lsp_document_symbols, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-vim.keymap.set('n', '<leader>w', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>W', builtin.live_grep, {})
 vim.api.nvim_set_keymap('n', '<leader>d', ':lua require"telescope.builtin".diagnostics({ bufnr = 0 })<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>f', ':lua require"telescope.builtin".find_files({ hidden = false })<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>F', ':lua require"telescope.builtin".find_files({ hidden = true })<CR>', {noremap = true, silent = true})
@@ -252,3 +252,40 @@ require("telescope").setup({
   },
 })
 require("presence"):setup({})
+-- examples for your init.lua
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+-- empty setup using defaults
+require("nvim-tree").setup()
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+        { key = "?", action = "toggle_help" },
+        { key = "<CR>", action = "cd" },
+        { key = "<CR>", action = "edit" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+vim.keymap.set('n', '<leader>e', ':NvimTreeFindFileToggle!<CR>')
+require("bufferline").setup{}
+vim.keymap.set('n', '<leader>w', '<C-w>')
+vim.keymap.set('n', '<leader>n', ':noh<CR>')
+vim.keymap.set('n', '<leader>c', ':bd<CR>')
+vim.keymap.set('n', '<leader>C', ':bd!<CR>')
+vim.keymap.set('n', 'L', ':bn<CR>')
+vim.keymap.set('n', 'H', ':bp<CR>')
