@@ -1,39 +1,49 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  -- Autocommand that reloads neovim whenever you save the plugins.lua file
-  vim.cmd [[
-    augroup packer_user_config
-      autocmd!
-      autocmd BufWritePost p.lua source <afile> | PackerSync
-    augroup end
-  ]]
-  -- Use a protected call so we don't error out on first use
-  local status_ok, packer = pcall(require, "packer")
-  if not status_ok then
-    return
-  end
-  
-  -- Have packer use a popup window
-  packer.init {
-    display = {
-      open_fn = function()
-        return require("packer.util").float { border = "rounded" }
-      end,
-    },
-    git = {
-      clone_timeout = 300, -- Timeout, in seconds, for git clones
-    },
+local fn = vim.fn
+
+-- Automatically install packer
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+  PACKER_BOOTSTRAP = fn.system {
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
   }
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
+  print "Installing packer close and reopen Neovim..."
+  vim.cmd [[packadd packer.nvim]]
 end
-local packer_bootstrap = ensure_packer()
-return require('packer').startup(function(use)
+
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost p.lua source <afile> | PackerSync
+  augroup end
+]]
+
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
+
+-- Have packer use a popup window
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+  git = {
+    clone_timeout = 300, -- Timeout, in seconds, for git clones
+  },
+}
+
+-- Install your plugins here
+return packer.startup(function(use)
+  -- My plugins here
   use 'wbthomason/packer.nvim'
 
   use 'github/copilot.vim'
@@ -112,7 +122,9 @@ return require('packer').startup(function(use)
     },
   }
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-  if packer_bootstrap then
-    require('packer').sync()
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if PACKER_BOOTSTRAP then
+    require("packer").sync()
   end
 end)
