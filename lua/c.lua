@@ -267,7 +267,6 @@ require("nvim-tree").setup({
         { key = "u", action = "dir_up" },
         { key = "?", action = "toggle_help" },
         { key = "<CR>", action = "cd" },
-        { key = "<CR>", action = "edit" },
       },
     },
   },
