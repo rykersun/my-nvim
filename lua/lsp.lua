@@ -84,17 +84,17 @@ local lspkind = require("lspkind")
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings,
   sources = {
-    -- {name = 'buffer', keyword_length = 1, max_item_count = 5},
-    -- {name = 'nvim_lsp', keyword_length = 1, max_item_count = 5},
-    -- {name = 'nvim_lua', keyword_length = 1, max_item_count = 5},
-    -- {name = 'path', keyword_length = 1, max_item_count = 5},
-    -- {name = 'luasnip', keyword_length = 1, max_item_count = 5},
+    {name = 'buffer', keyword_length = 1, max_item_count = 5},
+    {name = 'nvim_lsp', keyword_length = 1, max_item_count = 5},
+    {name = 'nvim_lua', keyword_length = 1, max_item_count = 5},
+    {name = 'path', keyword_length = 1, max_item_count = 5},
+    {name = 'luasnip', keyword_length = 1, max_item_count = 5},
 
-    {name = 'buffer', keyword_length = 3, max_item_count = 5},
-    {name = 'nvim_lsp', keyword_length = 3, max_item_count = 5},
-    {name = 'nvim_lua', keyword_length = 3, max_item_count = 5},
-    {name = 'path', keyword_length = 3, max_item_count = 5},
-    {name = 'luasnip', keyword_length = 3, max_item_count = 5},
+    -- {name = 'buffer', keyword_length = 3, max_item_count = 5},
+    -- {name = 'nvim_lsp', keyword_length = 3, max_item_count = 5},
+    -- {name = 'nvim_lua', keyword_length = 3, max_item_count = 5},
+    -- {name = 'path', keyword_length = 3, max_item_count = 5},
+    -- {name = 'luasnip', keyword_length = 3, max_item_count = 5},
   },
   formatting = {
     fields = { "abbr", "kind", "menu" },
