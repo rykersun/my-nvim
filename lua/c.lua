@@ -16,7 +16,6 @@ require('Comment').setup({
 require('nvim-autopairs').setup({})
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
-    "lua",
     "vim",
     "c",
     "markdown",
