@@ -6,10 +6,15 @@ require("lsp")
 
 -- Colorscheme settings
 vim.opt.cursorline = true
+
 -- require("colorscheme.vscode")
+-- require("colorscheme.vscode.lualine")
+
 -- require("colorscheme.github")
-require("colorscheme.github.lualine")
--- require("colorscheme.tokyonight")
+-- require("colorscheme.github.lualine")
+
+require("colorscheme.tokyonight")
+-- require("colorscheme.tokyonight.lualine")
 
 local copilot = true
 
