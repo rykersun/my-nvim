@@ -13,8 +13,11 @@ vim.opt.cursorline = true
 -- require("colorscheme.github")
 -- require("colorscheme.github.lualine")
 
-require("colorscheme.tokyonight")
+-- require("colorscheme.tokyonight")
 -- require("colorscheme.tokyonight.lualine")
+
+require("colorscheme.gruvbox")
+require("colorscheme.gruvbox.lualine")
 
 local copilot = true
 

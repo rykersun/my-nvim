@@ -14,6 +14,7 @@ require('Comment').setup({
   },
 })
 require('nvim-autopairs').setup({})
+require("symbols-outline").setup()
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "lua",
@@ -261,3 +262,4 @@ vim.keymap.set('n', '<leader>q', ':qa<CR>')
 vim.keymap.set('n', '<leader>Q', ':qa!<CR>')
 vim.keymap.set('n', '<leader>r', ':e<CR>')
 vim.keymap.set('n', '<leader>R', ':e!<CR>')
+vim.keymap.set('n', '<leader>o', ':SymbolsOutline<CR>')
